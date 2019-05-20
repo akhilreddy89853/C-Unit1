@@ -154,20 +154,20 @@ namespace spec
             // replace the blanks (___) with hexadecimal numbers.
             //
 			Assert::AreEqual(0xDD, leastSignificantByte(0x7ABBCCDD), L"leastSignificantByte(0x7ABBCCDD) failed", 1, 2);
-            Assert::AreEqual(122, mostSignificantByte(0x7ABBCCDD), L"mostSignificantByte(0x7ABBCCDD) failed", 1, 2);
+            Assert::AreEqual(0x7A, mostSignificantByte(0x7ABBCCDD), L"mostSignificantByte(0x7ABBCCDD) failed", 1, 2);
          
             
-            Assert::AreEqual(204, leastSignificantByte(0x7FAADDCC), L"leastSignificantByte(0x7FAADDCC) failed", 1, 2);
-            Assert::AreEqual(127, mostSignificantByte(0x7FAADDCC), L"mostSignificantByte(0x7FAADDCC) failed", 1, 2);
+            Assert::AreEqual(0xCC, leastSignificantByte(0x7FAADDCC), L"leastSignificantByte(0x7FAADDCC) failed", 1, 2);
+            Assert::AreEqual(0x7F, mostSignificantByte(0x7FAADDCC), L"mostSignificantByte(0x7FAADDCC) failed", 1, 2);
 
-            Assert::AreEqual(192, leastSignificantByte(0x70AADDC0), L"leastSignificantByte(0x70AADDC0) failed", 1, 2);
-            Assert::AreEqual(112, mostSignificantByte(0x70AADDC0), L"mostSignificantByte(0x70AADDC0) failed", 1, 2);
+            Assert::AreEqual(0xC0, leastSignificantByte(0x70AADDC0), L"leastSignificantByte(0x70AADDC0) failed", 1, 2);
+            Assert::AreEqual(0x70, mostSignificantByte(0x70AADDC0), L"mostSignificantByte(0x70AADDC0) failed", 1, 2);
             
-            Assert::AreEqual(192, leastSignificantByte(0xADDC0), L"leastSignificantByte(0xADDC0) failed", 1, 2);
-            Assert::AreEqual(7, mostSignificantByte(0x7AADDC0), L"mostSignificantByte(0x7AADDC0) failed", 1, 2);
+            Assert::AreEqual(0xC0, leastSignificantByte(0xADDC0), L"leastSignificantByte(0xADDC0) failed", 1, 2);
+            Assert::AreEqual(0x7, mostSignificantByte(0x7AADDC0), L"mostSignificantByte(0x7AADDC0) failed", 1, 2);
             
-            Assert::AreEqual(0, leastSignificantByte(0), L"leastSignificantByte(0) failed", 1, 2);
-            Assert::AreEqual(0, mostSignificantByte(0), L"mostSignificantByte(0) failed", 1, 2);
+            Assert::AreEqual(0x0, leastSignificantByte(0), L"leastSignificantByte(0) failed", 1, 2);
+            Assert::AreEqual(0x0, mostSignificantByte(0), L"mostSignificantByte(0) failed", 1, 2);
 		};
         
         [TestMethod]
@@ -177,14 +177,14 @@ namespace spec
             // Note:
             // replace the blanks (___) with hexadecimal numbers.
             //
-            Assert::AreEqual(___, reverseOfNumberByByte(0x7ABBCC7D), L"reverseOfNumberByByte(0x7ABBCC7D) failed", 1, 2);
-            Assert::AreEqual(___, reverseOfNumberByByte(0x12345678), L"reverseOfNumberByByte(0x12345678) failed", 1, 2);
+            Assert::AreEqual(0x7DCCBB7A, reverseOfNumberByByte(0x7ABBCC7D), L"reverseOfNumberByByte(0x7ABBCC7D) failed", 1, 2);
+            Assert::AreEqual(0x78563412, reverseOfNumberByByte(0x12345678), L"reverseOfNumberByByte(0x12345678) failed", 1, 2);
             
-            Assert::AreEqual(___, reverseOfNumberByByte(0xFF00), L"reverseOfNumberByByte(0xFF00) failed", 1, 2);
-            Assert::AreEqual(___, reverseOfNumberByByte(0xAA0000), L"reverseOfNumberByByte(0xAA0000) failed", 1, 2);
-            Assert::AreEqual(___, reverseOfNumberByByte(0xABCD0000), L"reverseOfNumberByByte(0xABCD0000) failed", 1, 2);
+            Assert::AreEqual(0xFF0000, reverseOfNumberByByte(0xFF00), L"reverseOfNumberByByte(0xFF00) failed", 1, 2);
+            Assert::AreEqual(0xAA00, reverseOfNumberByByte(0xAA0000), L"reverseOfNumberByByte(0xAA0000) failed", 1, 2);
+            Assert::AreEqual(0xCDAB, reverseOfNumberByByte(0xABCD0000), L"reverseOfNumberByByte(0xABCD0000) failed", 1, 2);
             
-            Assert::AreEqual(___, reverseOfNumberByByte(0), L"reverseOfNumberByByte(0) failed", 1, 2);
+            Assert::AreEqual(0, reverseOfNumberByByte(0), L"reverseOfNumberByByte(0) failed", 1, 2);
         };
 	};
 }

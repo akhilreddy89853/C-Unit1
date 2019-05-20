@@ -15,7 +15,14 @@
  */
 
 int andOfEachByte(int n) {
-    return -9999;
+	char byte0, byte1, byte2, byte3;
+	int result = 0;
+	byte0 = ((char*)(&n))[0];
+	byte1 = ((char*)(&n))[1];
+	byte2 = ((char*)(&n))[2];
+	byte3 = ((char*)(&n))[3];
+	result = byte0 & byte1 & byte2 & byte3;
+    return result;
 }
 
 //
@@ -23,9 +30,16 @@ int andOfEachByte(int n) {
 // implement the function using bitwise operators only
 // should not use * and + operators.
 int numberFromBits(int bits[32]) {
-    return -9999;
+	return -9999;
 }
 
+int Add(int x, int y)
+{
+	if (y == 0)
+		return x;
+	else
+		return Add(x ^ y, (x & y) << 1);
+}
 //
 // Note2:
 // implement the function using bitwise operators only

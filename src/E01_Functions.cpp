@@ -68,7 +68,7 @@ void sumOf100DigitNumbers(int num1[100], int num2[100], int sum[101]) {
 void productOf100DigitNumbers(int num1[100], int num2[100], int prod[200]) {
 	int counter1, counter2, carry = 0, product = 0, len, sum = 200, temp = 0, counter;
 
-	int c[200] = { 0 };
+	int product1[200] = { 0 };
 	for (counter2 = 99; counter2 >= 0; counter2--) {
 		sum--;
 		carry = 0;
@@ -78,23 +78,24 @@ void productOf100DigitNumbers(int num1[100], int num2[100], int prod[200]) {
 			product = (num2[counter2] * num1[counter1]) + carry;
 			carry = product / 10;
 			product = product % 10;
-			c[len] = c[len] + product;
+			product1[len] = product1[len] + product;
 			temp++;
 		}
-		c[len - 1] = carry;
+		product1[len - 1] = carry;
 
 	}
 	carry = 0, product = 0;
 	for (counter = 199; counter >= 0; counter--) {
-		product = c[counter] + carry;
+		product = product1[counter] + carry;
 		carry = 0;
 		if (product > 9) {
 			carry = product / 10;
 			product = product % 10;
-			c[counter] = product;
+			
 		}
+		product1[counter] = product;
 	}
 	for (counter = 0; counter < 200; counter++) {
-		prod[counter] = c[counter];
+		prod[counter] = product1[counter];
 	}
 }
